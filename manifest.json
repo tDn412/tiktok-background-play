@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok Background Play",
+  "version": "1.0.0",
+  "description": "Keeps TikTok videos and sound playing when the tab is hidden, minimized or in the background.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tiktok-background-play@tdn412.github.io",
+      "strict_min_version": "128.0"
+    }
+  },
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.tiktok.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    }
+  ]
+}
